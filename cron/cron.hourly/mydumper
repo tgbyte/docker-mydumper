@@ -1,0 +1,2 @@
+#!/bin/sh
+mydumper -v 3 -h $MYSQL_HOST -u $MYSQL_USER -p $MYSQL_PASSWORD -t $MYDUMPER_THREADS -c -I $MYDUMPER_SNAPSHOT_INTERVAL --less-locking --use-savepoints
