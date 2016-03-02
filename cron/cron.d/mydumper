@@ -1,0 +1,3 @@
+SHELL=/bin/sh
+
+7 */1 * * * root mydumper -v 3 -h $MYSQL_HOST -u $MYSQL_USER -p $MYSQL_PASSWORD -t $MYDUMPER_THREADS -c --less-locking --use-savepoints
