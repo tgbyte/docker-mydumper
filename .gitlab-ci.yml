@@ -1,0 +1,3 @@
+build_image:
+  stage: build
+  script: build-image.sh

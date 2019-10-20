@@ -1,4 +1,4 @@
-FROM tgbyte/cron
+FROM tgbyte/cron:log
 
 RUN apt-get update && \
     apt-get install -y mydumper
