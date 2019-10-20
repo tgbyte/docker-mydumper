@@ -1,3 +1,27 @@
-build_image:
-  stage: build
-  script: build-image.sh
+stages:
+  - build-image
+  - build-manifest
+variables:
+  MULTIARCH: 1
+
+.build-image-template: &build-image
+  stage: build-image
+  script:
+    - build-image.sh
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - results/
+
+build-image-amd64:
+  <<: *build-image
+
+build-image-arm:
+  <<: *build-image
+  variables:
+    ARCH: arm
+
+build-manifest:
+  stage: build-manifest
+  script:
+    - build-manifest.sh
